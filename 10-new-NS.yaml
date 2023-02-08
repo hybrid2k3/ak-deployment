@@ -1,0 +1,6 @@
+apiVersion: project.openshift.io/v1
+description: "My new-argo proj"
+displayName: my-project
+kind: ProjectRequest
+metadata:
+    name: new-git-ops-cluster
