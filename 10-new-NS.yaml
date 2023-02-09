@@ -3,4 +3,4 @@ description: "My new-argo proj"
 displayName: my-project
 kind: ProjectRequest
 metadata:
-  name: test
+  name: test6
