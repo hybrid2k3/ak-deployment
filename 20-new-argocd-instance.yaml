@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ArgoCD
 metadata:
-  name: test7
-  namespace: test7
+  name: test8
+  namespace: test8
 spec:
   repo:
     replicas: 3
