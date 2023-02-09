@@ -1,0 +1,16 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cluster-admin-argocd-instance
+  namespace: redhat5
+  uid: 0515bf99-3d8a-4756-bd60-a3b1940e1605
+  resourceVersion: '1151020'
+  creationTimestamp: '2023-02-09T12:13:56Z'
+subjects:
+  - kind: ServiceAccount
+    name: redhat5-argocd-application-controller
+    namespace: redhat5
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
