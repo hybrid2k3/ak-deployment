@@ -5,6 +5,20 @@ metadata:
   namespace: manual-argocd
 spec:
   controller:
+    appSync: 1m
+    parallelismLimit: 50
+    processors:
+      operation: 100
+      status: 200
+    resources:
+      limits:
+        cpu: '8'
+        memory: 65536Mi
+      requests:
+        cpu: '1'
+        memory: 1024Mi
+    sharding:
+      enabled: false
     resources:
       limits:
         cpu: 2000m
@@ -22,7 +36,7 @@ spec:
         cpu: 250m
         memory: 128Mi
   ha:
-    enabled: false
+    enabled: true
     resources:
       limits:
         cpu: 500m
@@ -44,6 +58,12 @@ spec:
         cpu: 250m
         memory: 128Mi
   repo:
+    env:
+      - name: ARGOCD_GIT_ATTEMPTS_COUNT
+        value: '3'
+      - name: ARGOCD_EXEC_TIMEOUT
+        value: 2m
+    replicas: 1
     resources:
       limits:
         cpu: 1000m
@@ -52,6 +72,17 @@ spec:
         cpu: 250m
         memory: 256Mi
   server:
+    autoscale:
+      enabled: false
+    env:
+      - name: ARGOCD_GRPC_MAX_SIZE_MB
+        value: '512'
+    grpc:
+      ingress:
+        enabled: false
+    ingress:
+      enabled: false
+    replicas: 1
     resources:
       limits:
         cpu: 500m
@@ -60,4 +91,7 @@ spec:
         cpu: 125m
         memory: 128Mi
     route:
+      enabled: true
+    service:
+      type: ''
       enabled: true
