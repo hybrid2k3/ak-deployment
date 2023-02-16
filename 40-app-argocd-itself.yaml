@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argocd-itself
-  namespace: hybrid-argo-inst
+  namespace: kuku
 spec:
   destination:
     namespace: argocd-itself
@@ -16,4 +16,4 @@ spec:
   syncPolicy:
     automated: {}
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true

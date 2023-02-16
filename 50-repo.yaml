@@ -2,7 +2,7 @@ kind: Secret
 apiVersion: v1
 metadata:
   name: github-ak-deployment
-  namespace: hybrid-argo
+  namespace: kuku
   labels:
     argocd.argoproj.io/secret-type: repository
   annotations:

@@ -1,8 +1,8 @@
 kind: ArgoCD
 apiVersion: argoproj.io/v1alpha1
 metadata:
-  name: argocd
-  namespace: manual-argocd
+  name: kuku
+  namespace: kuku
 spec:
   controller:
     appSync: 1m
@@ -63,7 +63,7 @@ spec:
         value: '3'
       - name: ARGOCD_EXEC_TIMEOUT
         value: 2m
-    replicas: 1
+    replicas: 2
     resources:
       limits:
         cpu: 1000m
@@ -82,7 +82,7 @@ spec:
         enabled: false
     ingress:
       enabled: false
-    replicas: 1
+    replicas: 2
     resources:
       limits:
         cpu: 500m

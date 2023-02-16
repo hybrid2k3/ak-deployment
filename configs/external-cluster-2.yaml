@@ -2,7 +2,7 @@ kind: Secret
 apiVersion: v1
 metadata:
   name: external-cluster-name2
-  namespace: redhat100
+  namespace: kuku
   labels:
     argocd.argoproj.io/secret-type: cluster
   annotations:
